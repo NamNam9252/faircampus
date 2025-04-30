@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode variables with new color scheme */
+    --background: 210 100% 98%;
+    --foreground: 221 39% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 221 39% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 39% 11%;
+    
+    --primary: 213 65% 87%; /* Light blue for light mode */
+    --primary-foreground: 221 39% 11%; /* Dark text for light mode */
+    
+    --secondary: 206 78% 44%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+    
+    --accent: 206 33% 60%;
+    --accent-foreground: 221 39% 11%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode variables with new color scheme */
+    --background: 222 47% 11%;
+    --foreground: 210 20% 98%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 212 67% 15%; /* Darker blue for dark mode */
+    --primary-foreground: 210 20% 98%; /* Light text for dark mode */
+    
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 20% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Apply dark mode by default */
+  html {
+    @apply dark;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-md hover:shadow-lg hover:border-uranian_blue-400/30 transition-all duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-br from-uranian_blue-300 via-uranian_blue-400 to-uranian_blue-500 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-gradient-to-br from-air_superiority_blue-400 via-uranian_blue-500 to-air_superiority_blue-600 bg-clip-text text-transparent;
+  }
+  .dark .text-gradient-blue {
+    @apply bg-gradient-to-br from-uranian_blue-200 via-uranian_blue-300 to-uranian_blue-100 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-br from-black-400 from-black-400 from-black-400 bg-clip-text text-transparent;
+  }
+  .dark .text-gradient-gold {
+    @apply bg-gradient-to-br from-yellow-200 via-yellow-300 to-amber-300 bg-clip-text text-transparent;
+  }
+
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-uranian_blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(169,206,244,0.5)];
+  }
+  
+  .pulse {
+    @apply animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
+  }
+}
