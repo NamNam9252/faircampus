@@ -59,7 +59,7 @@ const Footer = () => {
         
         <div className="mt-8 border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} FairCampus. All rights reserved.</p>
-          <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} TiaSukhnanni</p>
+          <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} NamanGoyal</p>
           <p className="text-sm text-muted-foreground mt-2 md:mt-0">Privacy-first platform for student support</p>
         </div>
       </div>
